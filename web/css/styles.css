@@ -1,0 +1,20 @@
+body {
+  background-color: #FFFFCC;
+  margin: 0;
+  /*background: linear-gradient(
+    to bottom,
+    0deg,
+    #FFFFCC,
+    #FFFFCC 7%,
+    #522900 10%,
+
+  );*/
+  background-image: repeating-linear-gradient(180deg,#FFFFCC,#FFFFCC 9%, rgb(100,100,100) 10%);
+
+}
+
+.top{
+  background-color: #522900;
+  height: 125px;
+  width: 100%;
+}
