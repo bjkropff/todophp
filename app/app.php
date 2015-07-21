@@ -11,18 +11,29 @@
     }
 
     $app = new Silex\Application();
-
     $app['debug'] = true;
 
-    $app->get("/", function() use ($app){
-      return $app ['twig']->render ('index.html.twig', array('task' => Tasks::getAll()));
-    });
+    $app->register(new Silex\Provider\TwigServiceProvider(), array(
+       'twig.path' => __DIR__.'/../views'
+    ));
 
-    $app->post("/task", function() use ($app){
-      $task = new Task($_POST['description']);
-      $task->save();
-      return $app['twig']->render('index.twig', array('task' => Tasks::getAll()));
-    });
+    use Symfony\Component\HttpFoundation\Request;
+    Request::enableHttpMethodParameterOverride();
+
+    $app->get("/", function() use ($app) {
+       return $app['twig']->render('task.twig', array('tasks' => Task::getAll()));
+   });
+
+   $app->post("/tasks", function() use ($app) {
+       $task = new Task($_POST['description']);
+       $task->save();
+       return $app['twig']->render('create_task.twig', array('newtask' => $task));
+   });
+
+   $app->post("/delete_tasks", function() use ($app) {
+       Task::deleteAll();
+       return $app['twig']->render('delete_tasks.twig');
+   });
 
     return $app;
 ?>
