@@ -1,15 +1,17 @@
 <?php
+
+    /**
+    * @backupGlobals disabled
+    * @backupStaticAttributes disabled
+    */
+
     class Task
     {
         private $description;
-        private $category_id;
-        private $id;
 
-        function __construct($description, $id = null, $category_id)
+        function __construct($description)
         {
             $this->description = $description;
-            $this->id = $id;
-            $this->category_id = $category_id;
         }
 
         function setDescription($new_description)
@@ -35,7 +37,7 @@
         static function deleteAll()
         {
             $_SESSION['list_of_tasks'] = array();
-        }        
+        }
 
     }
 
