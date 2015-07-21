@@ -10,7 +10,7 @@ This is a 'To Do List' apps written in PHP. It uses Composer to install [PHPUnit
 ###Use and Editing
 To use this boilerplate, simply: <br />
 1. Clone this repository into a directory of your choice. (git clone `https://github.com/bjkropff/titlecase.git`)<br />
-2. Navigate into this directory. (Mac: cd titlecase)<br />
+2. Navigate into this directory. (Mac: cd to_do)<br />
 3. Start a PHP server in the web folder of the project directory. (Mac: php -S localhost:8000)<br />
 4. Navigate your browser to localhost:8000
 
