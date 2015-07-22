@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__."/../vendor/autoload.php";
+    require_once __DIR__."/../../title_case/vendor/autoload.php";
     require_once __DIR__."/../src/Task.php";
 
     use Symfony\Component\Debug\Debug;
